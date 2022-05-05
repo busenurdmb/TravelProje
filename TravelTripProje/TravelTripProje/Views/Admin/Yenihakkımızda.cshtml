@@ -1,0 +1,27 @@
+﻿@model TravelTripProje.Models.Sınıflar.About
+@{
+    ViewBag.Title = "Yenihakkımızda";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Hakkımızda Ekleme Sayfası</h2>
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+@using (Html.BeginForm("Yenihakkımızda", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Fotoğraf Linki")
+        @Html.TextBoxFor(m => m.FoyoUrl, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FoyoUrl)
+        <br />
+        @Html.Label("Açıklamayı ")
+        @Html.TextAreaFor(m => m.Aciklama,15,1, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Aciklama)
+        <br />
+        
+        <button class="btn btn-success">EKLE</button>
+
+    </div>
+}

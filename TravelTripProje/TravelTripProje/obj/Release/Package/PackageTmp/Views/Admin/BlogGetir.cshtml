@@ -1,0 +1,39 @@
+﻿
+@model TravelTripProje.Models.Sınıflar.Blog
+@{
+    ViewBag.Title = "YeniBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<h1>Yeni Blog Eklme Sayfası</h1>
+<br />
+@using (Html.BeginForm("BlogGüncelle", "Admin", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(m => m.ID, new { @class = "form-control",@readonly="readonly" })
+    
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(m => m.Baslik, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Baslik)
+    <br />
+    @Html.Label("Açıklamayı yazınız")
+    @Html.TextAreaFor(m => m.Aciklama, 15, 1, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Aciklama)
+    <br />
+    @Html.Label("Tarih yazınız")
+    @Html.TextBoxFor(m => m.Tarih, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Tarih)
+    <br />
+    @Html.Label("fotograf")
+    @Html.TextBoxFor(m => m.BlogImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.BlogImage)
+    <br />
+    <button class="btn btn-success">Blog Güncelle</button>
+
+</div>
+}
+

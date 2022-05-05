@@ -1,0 +1,19 @@
+﻿@using TravelTripProje.Models.Sınıflar
+@model List<Blog>
+
+@foreach (var item in Model)
+{
+
+    <div class="right">
+        <div class="bot-left">
+            <img style="width:350px;height:150px;" src="@item.BlogImage" alt="" />
+        </div>
+        <div class="left-text">
+
+            <h4>@item.Baslik</h4>
+            <span class="doller">@(((DateTime)item.Tarih).ToString("dd-MMM-yyyy"))</span>
+            <p>@item.Aciklama.Substring(0,100)</p>
+            <p><a href="#"><span class="read">Devamını Oku>></span></a></p>
+        </div>
+    </div>
+}
